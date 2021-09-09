@@ -70,6 +70,8 @@ namespace FancyStaggeredLayout.Avalonia
         // Avalonia doesn't have DependencyProperty, but instead uses StyledProperty.
         // This page has good info on properties in Avalonia:
         // https://docs.avaloniaui.net/docs/authoring-controls/defining-properties
+        // "PropertyMetadata" apparently needs to be changed to "StyledPropertyMetadata":
+        // https://github.com/AvaloniaUI/Avalonia/issues/2309#issuecomment-520584913
 
         /// <summary>
         /// Represents the HorizontalAlignment property.
@@ -80,8 +82,8 @@ namespace FancyStaggeredLayout.Avalonia
         /// <summary>
         /// Represents the RowSpacing property.
         /// </summary>
-        public static StyledProperty RowSpacingProperty { get; } 
-            = AvaloniaProperty.Register("RowSpacing", typeof(double), typeof(StaggeredLayout), new PropertyMetadata(0.0, OnLayoutPropertyChanged));
+        public static StyledProperty<double> RowSpacingProperty { get; } 
+            = AvaloniaProperty.Register("RowSpacing", typeof(double), typeof(StaggeredLayout), new StyledPropertyMetadata<double>(0.0, OnLayoutPropertyChanged));
 
         /// <summary>
         /// Represents the ColumnSpacing property.

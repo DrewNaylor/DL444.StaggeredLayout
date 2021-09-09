@@ -130,6 +130,10 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Avalonia.Layout.StaggeredLayout\StaggeredColumnLayout.cs" />
+    <Compile Include="Avalonia.Layout.StaggeredLayout\StaggeredItem.cs" />
+    <Compile Include="Avalonia.Layout.StaggeredLayout\StaggeredLayout.cs" />
+    <Compile Include="Avalonia.Layout.StaggeredLayout\StaggeredLayoutState.cs" />
     <Compile Include="StaggeredLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\DL444.StaggeredLayout.Controls.rd.xml" />

@@ -290,11 +290,14 @@ namespace StaggeredLayout.Avalonia
             return finalSize;
         }
 
-        protected override void OnPropertyChanged<T>(AvaloniaProperty<T> property, Optional<T> oldValue, BindingValue<T> newValue, BindingPriority priority)
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+            // Had to change the arguments to match Avalonia 0.10.7's code
+            // since StaggeredLayout was using an old implementation that was
+            // changed between now and when it was ported. Should still work.
         {
-            base.OnPropertyChanged(property, oldValue, newValue, priority);
+            base.OnPropertyChanged(change);
 
-            if(property == DesiredColumnWidthProperty || property == ColumnSpacingProperty || property == RowSpacingProperty)
+            if(change.Property == DesiredColumnWidthProperty || change.Property == ColumnSpacingProperty || change.Property == RowSpacingProperty)
             {
                 InvalidateMeasure();
             }

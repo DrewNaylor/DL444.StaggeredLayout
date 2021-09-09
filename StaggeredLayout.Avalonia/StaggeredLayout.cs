@@ -1,14 +1,17 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
+// Modified by Drew Naylor to be used as its own library.
 
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using Avalonia;
+using Avalonia.Layout;
 using Avalonia.Data;
 
-namespace Avalonia.Layout
+namespace StaggeredLayout.Avalonia
 {
     /// <summary>
     /// Arranges child elements into a staggered grid pattern where items are added to the column that has used least amount of space.
@@ -74,21 +77,21 @@ namespace Avalonia.Layout
             0d);            
 
         /// <inheritdoc/>
-        protected internal override void InitializeForContextCore(VirtualizingLayoutContext context)
+        protected override void InitializeForContextCore(VirtualizingLayoutContext context)
         {
             context.LayoutState = new StaggeredLayoutState(context);
             base.InitializeForContextCore(context);
         }
 
         /// <inheritdoc/>
-        protected internal override void UninitializeForContextCore(VirtualizingLayoutContext context)
+        protected override void UninitializeForContextCore(VirtualizingLayoutContext context)
         {
             context.LayoutState = null;
             base.UninitializeForContextCore(context);
         }
 
         /// <inheritdoc/>
-        protected internal override void OnItemsChangedCore(VirtualizingLayoutContext context, object source, NotifyCollectionChangedEventArgs args)
+        protected override void OnItemsChangedCore(VirtualizingLayoutContext context, object source, NotifyCollectionChangedEventArgs args)
         {
             var state = (StaggeredLayoutState)context.LayoutState;
 
@@ -120,7 +123,7 @@ namespace Avalonia.Layout
         }
 
         /// <inheritdoc/>
-        protected internal override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
+        protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
         {
             if (context.ItemCount == 0)
             {
@@ -245,7 +248,7 @@ namespace Avalonia.Layout
         }
 
         /// <inheritdoc/>
-        protected internal override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
+        protected override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
         {
             if ((context.RealizationRect.Width == 0) && (context.RealizationRect.Height == 0))
             {
@@ -287,11 +290,14 @@ namespace Avalonia.Layout
             return finalSize;
         }
 
-        protected override void OnPropertyChanged<T>(AvaloniaProperty<T> property, Optional<T> oldValue, BindingValue<T> newValue, BindingPriority priority)
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+            // Had to change the arguments to match Avalonia 0.10.7's code
+            // since StaggeredLayout was using an old implementation that was
+            // changed between now and when it was ported. Should still work.
         {
-            base.OnPropertyChanged(property, oldValue, newValue, priority);
+            base.OnPropertyChanged(change);
 
-            if(property == DesiredColumnWidthProperty || property == ColumnSpacingProperty || property == RowSpacingProperty)
+            if(change.Property == DesiredColumnWidthProperty || change.Property == ColumnSpacingProperty || change.Property == RowSpacingProperty)
             {
                 InvalidateMeasure();
             }

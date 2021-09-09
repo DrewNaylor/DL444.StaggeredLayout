@@ -279,7 +279,9 @@ namespace FancyStaggeredLayout.Avalonia
                 availableWidth = totalWidth;
             }
         }
-        private static void OnLayoutPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnLayoutPropertyChanged(AvaloniaObject d, AvaloniaPropertyChangedEventArgs e)
+            // Not sure if these are the right arguments, but they got rid of the squiggles.
+            // There are still some errors above that can't convert from a method group to a binding mode.
         {
             var layout = (StaggeredLayout)d;
 

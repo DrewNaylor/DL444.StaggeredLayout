@@ -10,6 +10,7 @@ using System.Linq;
 using StaggeredLayout.Avalonia;
 using Avalonia;
 using Avalonia.Layout;
+using Avalonia.Controls;
 
 namespace FancyStaggeredLayout.Avalonia
 {
@@ -545,7 +546,10 @@ namespace FancyStaggeredLayout.Avalonia
 
     internal class ElementCacheItem
     {
-        public UIElement Element { get; set; }
+        // Avalonia uses "Control" instead of "UIElement":
+        // https://docs.avaloniaui.net/misc/wpf/uielement-frameworkelement-and-control
+
+        public Control Element { get; set; }
         public bool Measured { get; set; }
     }
 

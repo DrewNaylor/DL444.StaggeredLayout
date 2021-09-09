@@ -3,6 +3,9 @@
 // See the LICENSE file in the project root for more information.
 // Modified by Drew Naylor to be used as its own library.
 
+
+using Avalonia.Layout;
+
 namespace StaggeredLayout.Avalonia
 {
     internal class StaggeredItem

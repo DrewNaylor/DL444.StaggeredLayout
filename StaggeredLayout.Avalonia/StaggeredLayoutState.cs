@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Avalonia;
+using Avalonia.Layout;
 
 namespace StaggeredLayout.Avalonia
 {

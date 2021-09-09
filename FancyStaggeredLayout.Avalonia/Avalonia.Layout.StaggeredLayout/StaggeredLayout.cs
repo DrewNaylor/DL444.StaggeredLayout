@@ -6,9 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using Avalonia;
+using Avalonia.Layout;
 using Avalonia.Data;
 
-namespace Avalonia.Layout
+namespace StaggeredLayout.Avalonia
 {
     /// <summary>
     /// Arranges child elements into a staggered grid pattern where items are added to the column that has used least amount of space.
@@ -74,21 +76,21 @@ namespace Avalonia.Layout
             0d);            
 
         /// <inheritdoc/>
-        protected internal override void InitializeForContextCore(VirtualizingLayoutContext context)
+        protected override void InitializeForContextCore(VirtualizingLayoutContext context)
         {
             context.LayoutState = new StaggeredLayoutState(context);
             base.InitializeForContextCore(context);
         }
 
         /// <inheritdoc/>
-        protected internal override void UninitializeForContextCore(VirtualizingLayoutContext context)
+        protected override void UninitializeForContextCore(VirtualizingLayoutContext context)
         {
             context.LayoutState = null;
             base.UninitializeForContextCore(context);
         }
 
         /// <inheritdoc/>
-        protected internal override void OnItemsChangedCore(VirtualizingLayoutContext context, object source, NotifyCollectionChangedEventArgs args)
+        protected override void OnItemsChangedCore(VirtualizingLayoutContext context, object source, NotifyCollectionChangedEventArgs args)
         {
             var state = (StaggeredLayoutState)context.LayoutState;
 
@@ -120,7 +122,7 @@ namespace Avalonia.Layout
         }
 
         /// <inheritdoc/>
-        protected internal override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
+        protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
         {
             if (context.ItemCount == 0)
             {
@@ -245,7 +247,7 @@ namespace Avalonia.Layout
         }
 
         /// <inheritdoc/>
-        protected internal override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
+        protected override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
         {
             if ((context.RealizationRect.Width == 0) && (context.RealizationRect.Height == 0))
             {

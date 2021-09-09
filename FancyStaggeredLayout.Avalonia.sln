@@ -11,6 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FancyStaggeredLayout.Avalonia", "FancyStaggeredLayout.Avalonia\FancyStaggeredLayout.Avalonia.csproj", "{653CE926-34D9-47D5-8AE4-CECFD71C868C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F2380215-4266-4107-8637-339055AB8972} = {F2380215-4266-4107-8637-339055AB8972}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaggeredLayout.Avalonia", "StaggeredLayout.Avalonia\StaggeredLayout.Avalonia.csproj", "{F2380215-4266-4107-8637-339055AB8972}"
 EndProject

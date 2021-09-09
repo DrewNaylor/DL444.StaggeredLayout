@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using Microsoft.UI.Xaml.Controls;
-using Windows.Foundation;
-using Windows.UI.Xaml;
+using StaggeredLayout.Avalonia;
+using Avalonia;
+using Avalonia.Layout;
 
 namespace FancyStaggeredLayout.Avalonia
 {

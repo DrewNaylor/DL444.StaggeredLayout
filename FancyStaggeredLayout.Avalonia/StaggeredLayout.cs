@@ -6,7 +6,7 @@ using Microsoft.UI.Xaml.Controls;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 
-namespace DL444.StaggeredLayout.Controls
+namespace FancyStaggeredLayout.Avalonia
 {
     /// <summary>
     /// The StaggeredLayout allows for layout of items in a column approach 

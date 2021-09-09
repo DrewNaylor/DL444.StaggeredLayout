@@ -76,7 +76,7 @@ namespace FancyStaggeredLayout.Avalonia
         /// <summary>
         /// Represents the HorizontalAlignment property.
         /// </summary>
-        public static StyledProperty HorizontalAlignmentProperty { get; } 
+        public static StyledProperty<HorizontalAlignment> HorizontalAlignmentProperty { get; } 
             = AvaloniaProperty.Register("HorizontalAlignment", typeof(HorizontalAlignment), typeof(StaggeredLayout), new PropertyMetadata(default(HorizontalAlignment), OnLayoutPropertyChanged));
 
         /// <summary>
@@ -88,19 +88,19 @@ namespace FancyStaggeredLayout.Avalonia
         /// <summary>
         /// Represents the ColumnSpacing property.
         /// </summary>
-        public static StyledProperty ColumnSpacingProperty { get; } 
+        public static StyledProperty<double> ColumnSpacingProperty { get; } 
             = AvaloniaProperty.Register("ColumnSpacing", typeof(double), typeof(StaggeredLayout), new PropertyMetadata(0.0, OnLayoutPropertyChanged));
 
         /// <summary>
         /// Represents the DesireColumnWidth property.
         /// </summary>
-        public static StyledProperty DesiredColumnWidthProperty { get; } 
+        public static StyledProperty<double> DesiredColumnWidthProperty { get; } 
             = AvaloniaProperty.Register("DesiredColumnWidth", typeof(double), typeof(StaggeredLayout), new PropertyMetadata(250.0, OnLayoutPropertyChanged));
 
         /// <summary>
         /// Represents the Padding property.
         /// </summary>
-        public static StyledProperty PaddingProperty { get; } 
+        public static StyledProperty<Thickness> PaddingProperty { get; } 
             = AvaloniaProperty.Register("Padding", typeof(Thickness), typeof(StaggeredLayout), new PropertyMetadata(default(Thickness), OnLayoutPropertyChanged));
         #endregion
 

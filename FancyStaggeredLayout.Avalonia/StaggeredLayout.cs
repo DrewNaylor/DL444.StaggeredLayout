@@ -382,7 +382,9 @@ namespace FancyStaggeredLayout.Avalonia
             {
                 EnsureCount(index + 1);
                 var element = context.GetOrCreateElementAt(index, ElementRealizationOptions.ForceCreate | ElementRealizationOptions.SuppressAutoRecycle);
-                elementCache[index] = new ElementCacheItem() { Element = element };
+                // Added a cast for element so it's casted as a Control. Maybe there's another issue somewhere
+                // that needs to be resolved so it can just be a Control.
+                elementCache[index] = new ElementCacheItem() { Element = (Control)element };
                 return elementCache[index];
             }
         }

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	<Version>0.10.7</Version>
+    <Description>StaggeredLayout.Avalonia is the WinUI StaggeredLayout control ported to Avalonia by Dan Walmsley and placed into a library by Drew Naylor. StaggeredLayout.Avalonia is not associated with the Avalonia project beyond being intended to be used with software built with Avalonia.</Description>
+    <Product>StaggeredLayout.Avalonia</Product>
+    <Copyright>StaggeredLayout was ported from WinUI to Avalonia by Dan Walmsley (Avalonia is is Copyright (c) .NET Foundation and Contributors); Modifications Copyright (c) 2021 Drew Naylor;.</Copyright>
+    <Authors>StaggeredLayout ported to Avalonia by Dan Walmsley; Modified as StaggeredLayout.Avalonia by Drew Naylor.</Authors>
+    <AssemblyVersion>0.10.7</AssemblyVersion>
+    <FileVersion>0.10.7</FileVersion>
+    <AssemblyName>StaggeredLayout.Avalonia</AssemblyName>
+    <RootNamespace>StaggeredLayout.Avalonia</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
+  </ItemGroup>
+</Project>

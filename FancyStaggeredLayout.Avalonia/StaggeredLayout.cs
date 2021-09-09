@@ -67,7 +67,7 @@ namespace FancyStaggeredLayout.Avalonia
             set { SetValue(PaddingProperty, value); }
         }
 
-        #region Dependency Properties
+        #region Styled Properties
         // Avalonia doesn't have DependencyProperty, but instead uses StyledProperty.
         // This page has good info on properties in Avalonia:
         // https://docs.avaloniaui.net/docs/authoring-controls/defining-properties

@@ -73,6 +73,8 @@ namespace FancyStaggeredLayout.Avalonia
         // https://docs.avaloniaui.net/docs/authoring-controls/defining-properties
         // "PropertyMetadata" apparently needs to be changed to "StyledPropertyMetadata":
         // https://github.com/AvaloniaUI/Avalonia/issues/2309#issuecomment-520584913
+        // Avalonia uses PropertyChangedCallback instead of what WPF does:
+        // https://docs.avaloniaui.net/misc/wpf/propertychangedcallback
 
         /// <summary>
         /// Represents the HorizontalAlignment property.

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDF1E81D-DAFC-473B-A991-03C0F0D53B4E}</ProjectGuid>
+    <ProjectGuid>{653CE926-34D9-47D5-8AE4-CECFD71C868C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DL444.StaggeredLayout.Controls</RootNamespace>

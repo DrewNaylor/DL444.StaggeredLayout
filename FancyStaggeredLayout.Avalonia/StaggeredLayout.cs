@@ -1,4 +1,9 @@
-﻿using System;
+﻿// This file was modified by Drew Naylor.
+// The modifications are Copyright (c) 2021 Drew Naylor.
+// Going off the "LICENSE" file, this project is under the MIT License.
+// See the file "LICENSE" for more details on the copyright and licensing.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;

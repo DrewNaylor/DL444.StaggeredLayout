@@ -60,8 +60,8 @@ namespace StaggeredLayout.Avalonia
         /// Identifies the <see cref="HorizontalAlignment"/> dependency property.
         /// </summary>
         /// <returns>The identifier for the <see cref="HorizontalAlignment"/> dependency property.</returns>
-        public static readonly StyledProperty<double> HorizontalAlignmentProperty = AvaloniaProperty.Register<StaggeredLayout, double>(
-            nameof(DesiredColumnWidth), 250d);
+        public static readonly StyledProperty<HorizontalAlignment> HorizontalAlignmentProperty = AvaloniaProperty.Register<StaggeredLayout, HorizontalAlignment>(
+            nameof(HorizontalAlignment));
 
         /// <summary>
         /// Gets or sets the spacing between columns of items.

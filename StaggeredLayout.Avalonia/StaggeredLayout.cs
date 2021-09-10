@@ -297,7 +297,7 @@ namespace StaggeredLayout.Avalonia
         {
             base.OnPropertyChanged(change);
 
-            if (change.Property == DesiredColumnWidthProperty || change.Property == ColumnSpacingProperty || change.Property == RowSpacingProperty)
+            if(change.Property == DesiredColumnWidthProperty || change.Property == ColumnSpacingProperty || change.Property == RowSpacingProperty)
             {
                 InvalidateMeasure();
             }

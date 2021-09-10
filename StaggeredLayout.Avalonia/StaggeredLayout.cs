@@ -64,6 +64,25 @@ namespace StaggeredLayout.Avalonia
             nameof(HorizontalAlignment));
 
         /// <summary>
+        /// Gets or sets the Padding property.
+        /// </summary>
+        /// <remarks>
+        /// The width of columns can exceed the DesiredColumnWidth if the HorizontalAlignment is set to Stretch.
+        /// </remarks>
+        public Thickness Padding
+        {
+            get { return (Thickness)GetValue(PaddingProperty); }
+            set { SetValue(PaddingProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="Padding"/> dependency property.
+        /// </summary>
+        /// <returns>The identifier for the <see cref="Padding"/> dependency property.</returns>
+        public static readonly StyledProperty<Thickness> PaddingProperty = AvaloniaProperty.Register<StaggeredLayout, Thickness>(
+            nameof(PaddingProperty));
+
+        /// <summary>
         /// Gets or sets the spacing between columns of items.
         /// </summary>
         public double ColumnSpacing

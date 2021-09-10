@@ -35,7 +35,7 @@ namespace StaggeredLayout.Avalonia
         {
             get { return (double)GetValue(DesiredColumnWidthProperty); }
             set { SetValue(DesiredColumnWidthProperty, value); }
-        }                   
+        }
 
         /// <summary>
         /// Identifies the <see cref="DesiredColumnWidth"/> dependency property.
@@ -58,7 +58,7 @@ namespace StaggeredLayout.Avalonia
         /// </summary>
         public static readonly StyledProperty<double> ColumnSpacingProperty = AvaloniaProperty.Register<StaggeredLayout, double>(
             nameof(ColumnSpacing),
-            0d);            
+            0d);
 
         /// <summary>
         /// Gets or sets the spacing between rows of items.
@@ -74,7 +74,7 @@ namespace StaggeredLayout.Avalonia
         /// </summary>
         public static readonly StyledProperty<double> RowSpacingProperty = AvaloniaProperty.Register<StaggeredLayout, double>(
             nameof(RowSpacing),
-            0d);            
+            0d);
 
         /// <inheritdoc/>
         protected override void InitializeForContextCore(VirtualizingLayoutContext context)
@@ -291,9 +291,9 @@ namespace StaggeredLayout.Avalonia
         }
 
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
-            // Had to change the arguments to match Avalonia 0.10.7's code
-            // since StaggeredLayout was using an old implementation that was
-            // changed between now and when it was ported. Should still work.
+        // Had to change the arguments to match Avalonia 0.10.7's code
+        // since StaggeredLayout was using an old implementation that was
+        // changed between now and when it was ported. Should still work.
         {
             base.OnPropertyChanged(change);
 

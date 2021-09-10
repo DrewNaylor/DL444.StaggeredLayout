@@ -79,35 +79,45 @@ namespace FancyStaggeredLayout.Avalonia
         // TODO: We need to do this instead of the current OnLayoutPropertyChanged pass:
         // https://docs.avaloniaui.net/docs/data-binding/binding-from-code#subscribing-to-a-property-on-any-object
 
+        // I copied these from the regular StaggeredLayout.Avalonia library since they were
+        // already translated to Avalonia.
+
         /// <summary>
         /// Represents the HorizontalAlignment property.
         /// </summary>
         public static StyledProperty<HorizontalAlignment> HorizontalAlignmentProperty { get; } 
-            = AvaloniaProperty.Register("HorizontalAlignment", typeof(HorizontalAlignment), typeof(StaggeredLayout), new StyledPropertyMetadata<HorizontalAlignment>(default(HorizontalAlignment), OnLayoutPropertyChanged));
+            = AvaloniaProperty.Register<StaggeredLayout, HorizontalAlignment>(
+            nameof(HorizontalAlignment));
 
         /// <summary>
         /// Represents the RowSpacing property.
         /// </summary>
         public static StyledProperty<double> RowSpacingProperty { get; } 
-            = AvaloniaProperty.Register("RowSpacing", typeof(double), typeof(StaggeredLayout), new StyledPropertyMetadata<double>(0.0, OnLayoutPropertyChanged));
+            = AvaloniaProperty.Register<StaggeredLayout, double>(
+            nameof(RowSpacing),
+            0d);
 
         /// <summary>
         /// Represents the ColumnSpacing property.
         /// </summary>
         public static StyledProperty<double> ColumnSpacingProperty { get; } 
-            = AvaloniaProperty.Register("ColumnSpacing", typeof(double), typeof(StaggeredLayout), new StyledPropertyMetadata<double>(0.0, OnLayoutPropertyChanged));
+            = AvaloniaProperty.Register<StaggeredLayout, double>(
+            nameof(ColumnSpacing),
+            0d);
 
         /// <summary>
-        /// Represents the DesireColumnWidth property.
+        /// Represents the DesiredColumnWidth property.
         /// </summary>
         public static StyledProperty<double> DesiredColumnWidthProperty { get; } 
-            = AvaloniaProperty.Register("DesiredColumnWidth", typeof(double), typeof(StaggeredLayout), new StyledPropertyMetadata<double>(250.0, OnLayoutPropertyChanged));
+            = AvaloniaProperty.Register<StaggeredLayout, double>(
+            nameof(DesiredColumnWidth), 250d);
 
         /// <summary>
         /// Represents the Padding property.
         /// </summary>
         public static StyledProperty<Thickness> PaddingProperty { get; } 
-            = AvaloniaProperty.Register("Padding", typeof(Thickness), typeof(StaggeredLayout), new StyledPropertyMetadata<Thickness>(default(Thickness), OnLayoutPropertyChanged));
+            = AvaloniaProperty.Register<StaggeredLayout, Thickness>(
+            nameof(PaddingProperty));
         #endregion
 
         protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)

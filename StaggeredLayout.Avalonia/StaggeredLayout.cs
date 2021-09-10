@@ -45,6 +45,25 @@ namespace StaggeredLayout.Avalonia
             nameof(DesiredColumnWidth), 250d);
 
         /// <summary>
+        /// Gets or sets the HorizontalAlignment property.
+        /// </summary>
+        /// <remarks>
+        /// The width of columns can exceed the DesiredColumnWidth if the HorizontalAlignment is set to Stretch.
+        /// </remarks>
+        public HorizontalAlignment HorizontalAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(HorizontalAlignmentProperty); }
+            set { SetValue(HorizontalAlignmentProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="HorizontalAlignment"/> dependency property.
+        /// </summary>
+        /// <returns>The identifier for the <see cref="HorizontalAlignment"/> dependency property.</returns>
+        public static readonly StyledProperty<double> HorizontalAlignmentProperty = AvaloniaProperty.Register<StaggeredLayout, double>(
+            nameof(DesiredColumnWidth), 250d);
+
+        /// <summary>
         /// Gets or sets the spacing between columns of items.
         /// </summary>
         public double ColumnSpacing

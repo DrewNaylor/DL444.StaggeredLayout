@@ -66,9 +66,6 @@ namespace StaggeredLayout.Avalonia
         /// <summary>
         /// Gets or sets the Padding property.
         /// </summary>
-        /// <remarks>
-        /// The width of columns can exceed the DesiredColumnWidth if the HorizontalAlignment is set to Stretch.
-        /// </remarks>
         public Thickness Padding
         {
             get { return (Thickness)GetValue(PaddingProperty); }

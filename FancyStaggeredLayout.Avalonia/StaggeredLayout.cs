@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using StaggeredLayout.Avalonia;
 using Avalonia;
 using Avalonia.Layout;
 using Avalonia.Controls;
